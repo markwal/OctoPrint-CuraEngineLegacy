@@ -715,7 +715,7 @@ class Profile(object):
 			else:
 				result.append("{k}={v}".format(k=k, v=v))
 
-		return base64.b64encode(zlib.compress("\b".join(result), 9))
+		return base64.b64encode(zlib.compress("\b".join(result).encode("utf-8"), 9))
 
 	def replaceTagMatch(self, m):
 		import time
